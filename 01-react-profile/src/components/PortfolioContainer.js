@@ -5,6 +5,8 @@ import About from './pages/aboutMe';
 import Past from './pages/pastWork';
 import Contact from './pages/contactInfo';
 import Resume from './pages/Resume';
+import Footer from './pages/footer';
+
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -18,10 +20,10 @@ export default function PortfolioContainer() {
       return <About />;
     }
     if (currentPage === 'pastWork') {
-      return <Past/>;
+      return <Past />;
     }
     if (currentPage === 'Resume') {
-      return <Resume/>;
+      return <Resume />;
     }
     return <Contact />;
   };
@@ -29,9 +31,15 @@ export default function PortfolioContainer() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
-      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-      {renderPage()}
-    </div>
+    <mai>
+      <div>
+        <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
+        {renderPage()}
+      </div>
+      <div >
+        <Footer currentPage={currentPage} handlePageChange={handlePageChange} />
+      </div>
+    </mai>
   );
+
 }
