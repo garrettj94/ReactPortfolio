@@ -1,20 +1,6 @@
-import React , { useState }from 'react';
+import { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
 
-// export default function Contact() {
-//   return (
-//     <div>
-//       <h1>Contact Page</h1>
-//       <p className='email'>
-//         Email: garrettjackson43@gmail.com 
-       
-//       </p>
-//       <p className='cell'>
-//          Cell: 203-535-2543
-//          </p>
-//     </div>
-//   );
-// }
 
  function Form() {
   // Create state variables for the fields in the form
@@ -51,7 +37,9 @@ const handleFormSubmit = (e) => {
   setComment('');
 
   };
-
+  onEmailChange(e) = {
+    this:useState({email: e.target.value})
+  }
   return (
     <div>
       <h1>Contact Me! </h1>
